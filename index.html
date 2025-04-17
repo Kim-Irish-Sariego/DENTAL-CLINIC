@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GARCIA-LAZARO DENTAL CLINIC - Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('https://i.pinimg.com/originals/f6/96/ce/f696ceed06e2675fc3e2cf30fd20b10c.jpg'); 
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        header { 
+            font-size: 36px;
+            font-family: 'Pacifico', cursive;
+            color: deeppink;
+            padding: 0px 0;
+            text-align: center;
+          
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        nav {
+            background-color: deeppink;
+            padding: 15PX;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease-in-out;
+        }
+        nav a:hover {
+            text-decoration: underline;
+            color: #ffddf0;
+        }
+        .container {
+            padding: 20px;
+            background: white;
+            margin: 30px auto;
+            width: 80%;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        h2 {
+            color: #c71585;
+            font-weight: 600;
+        }
+        .button-container {
+            margin-top: 20px;
+        }
+        .button {
+            background-color: deeppink;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+            margin: 10px;
+            transition: transform 0.3s ease-in-out, background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #c71585;
+            transform: scale(1.1);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+         footer {
+            background: linear-gradient(135deg, #ff80b3, #ff3385);
+            color: BLACK;
+            text-align: center;
+            padding: 1px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Garcia-Lazaro Dental Clinic</h1>
+</header>
+    
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="registration.html">Registration</a>
+        <a href="about.html">About Us</a>
+    </nav>
+    
+    <div id="home" class="container section">
+        <h2>WELCOME TO GARCIA-LAZARO DENTAL CLINIC</h2>
+        <h2>"When you choose Garcia-Lazaro Dental Clinic, you’re choosing a team that cares about more than your teeth. We’re dedicated to creating a lifetime of smiles, blending technical expertise with a patient-centered approach that prioritizes your peace of mind."</h2>
+        <div class="button-container">
+            <button class="button" onclick="location.href='VisitNow.html'">Visit Now</button>
+            <button class="button" onclick="location.href='registration.html'">Registration</button>
+        </div>
+    </div>
+
+<footer>
+    <p>PROGRAMMED AND DEVELOPED BY KIM IRISH P. SARIEGO</p>
+</footer>
+
+</body>
+</html>

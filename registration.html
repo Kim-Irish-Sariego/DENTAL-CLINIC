@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> FILL UP FORM </title>
+    <style>
+        body {
+            background-image: url('https://i.pinimg.com/originals/f6/96/ce/f696ceed06e2675fc3e2cf30fd20b10c.jpg'); 
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+         header { 
+            font-size: 36px;
+            font-family: 'Pacifico', cursive;
+            color: deeppink;
+            padding: 0px 0;
+            text-align: center;
+          
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        nav {
+            background-color: deeppink;
+            padding: 1em 0;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 35px;
+            background: deeppink;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        h1 {
+            color: #c71585;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+
+        input, select, textarea, button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        button {
+            background-color: #ff69b4;
+            color: black;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+
+        button:hover {
+            background-color: #c71585;
+        }
+
+        p {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .thankYouContainer {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+            padding: 20px;
+            background: deeppink;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .thankYouContainer h2 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+        }
+         footer {
+            background: linear-gradient(135deg, #ff80b3, #ff3385);
+            color: BLACK;
+            text-align: center;
+            padding: 1px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Garcia-Lazaro Dental Clinic</h1>
+</header>
+
+    <!-- Navigation Menu -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="registration.html">Registration</a>
+        <a href="about.html">About Us</a>
+    </nav>
+
+    <!-- Registration Form Section -->
+    <section class="container" id="formContainer">
+        <h2>Book Your Appointment</h2>
+        <p>Please fill in the details below to book your appointment.</p>
+
+        <form id="bookingForm">
+            <!-- Patient Information -->
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+            <!-- Appointment Details -->
+            <label for="date">Preferred Date:</label>
+            <input type="date" id="date" name="date" required>
+
+            <label for="time">Preferred Time:</label>
+            <select id="time" name="time" required>
+                <option value="9am-11am">9:00 AM - 11:00 AM</option>
+                <option value="11am-1pm">11:00 AM - 1:00 PM</option>
+                <option value="2pm-4pm">2:00 PM - 4:00 PM</option>
+                <option value="4pm-6pm">4:00 PM - 6:00 PM</option>
+            </select>
+
+            <label for="reason">Reason for Visit:</label>
+            <textarea id="reason" name="reason" rows="4" placeholder="Describe your dental issue or reason for the visit" required></textarea>
+
+            <!-- Submit Button -->
+            <button type="button" onclick="submitForm()">Book Appointment</button>
+        </form>
+    </section>
+
+    <div class="thankYouContainer" id="thankYouMessage">
+        <h2>YOU ARE NOW BOOKED IN GARCIA-LAZARO DENTAL CLINIC</h2>
+    </div>
+
+    <footer>
+    <p>PROGRAMMED AND DEVELOPED BY KIM IRISH P. SARIEGO</p>
+</footer>
+
+    <script>
+        function submitForm() {
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const date = document.getElementById('date').value;
+            const reason = document.getElementById('reason').value.trim();
+            const formContainer = document.getElementById('formContainer');
+            const thankYouMessage = document.getElementById('thankYouMessage');
+
+            const today = new Date();
+            const selectedDate = new Date(date);
+
+            // Validation checks
+            if (!name || !email || !phone || !date || !reason) {
+                alert('Please fill in all fields.');
+                return;
+            }
+
+            if (selectedDate <= today) {
+                alert('Please select a date that is tomorrow or next week.');
+                return;
+            }
+
+            // Simulate form submission
+            formContainer.style.display = 'none';
+            thankYouMessage.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
